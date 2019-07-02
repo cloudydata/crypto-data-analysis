@@ -37,4 +37,4 @@ class Payload(Resource):
 
 api.add_resource(Payload , "/payload/<string:payload>")
 
-app.run(host='0.0.0.0', debug=True)
+app.run(host='0.0.0.0')
