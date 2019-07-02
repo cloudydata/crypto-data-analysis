@@ -34,6 +34,6 @@ class Payload(Resource):
 		return "DELETE Methods not Allowed", 400
 
 
-api.add_resource(Payload , "/payload/<string:name>")
+api.add_resource(Payload , "/payload/<string:payload>")
 
 app.run(host='0.0.0.0', debug=True)
