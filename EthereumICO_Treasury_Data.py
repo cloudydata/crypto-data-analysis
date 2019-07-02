@@ -2,6 +2,9 @@ import requests
 from lxml.html import fromstring
 from itertools import islice
 import csv
+from pathlib import Path
+
+HOME = str(Path.home())
 
 def chunk(it, size):
     it = iter(it)
@@ -37,7 +40,7 @@ if __name__ == "__main__":
 		eth_ico_balances_final.append(tuple([x[i][0]] + list(x[i][1])))
 	
 	# write to file
-	with open('/home/mkultra/Desktop/ETHICO_test.csv','w') as out:
+	with open(HOME+'/ETHICO_test.csv','w') as out:
 		csv_out=csv.writer(out)
 		csv_out.writerow(data_headers)
 		for row in eth_ico_balances_final:
