@@ -30,10 +30,10 @@ class Payload(Resource):
 	def put(self) :
 		return "PUT Methods not Allowed", 400
 	
-	def delete(self, name) :
+	def delete(self) :
 		return "DELETE Methods not Allowed", 400
 
 
-api.add_resource(Payload , "/payload/<string:ticker>")
+api.add_resource(Payload , "/payload/<string:name>")
 
 app.run(host='0.0.0.0', debug=True)
