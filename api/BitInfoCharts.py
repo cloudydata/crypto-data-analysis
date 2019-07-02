@@ -159,3 +159,7 @@ def update_all():
     
     for coin in coin_list:
         create_master_dataframe(coin_ticker=coin)
+
+if __name__ == "__main__":
+    
+    update_all()
