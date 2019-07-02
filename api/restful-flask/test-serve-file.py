@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource
 from pathlib import Path
+import json
 
 app = Flask(__name__)
 api = Api(app)
@@ -21,7 +22,7 @@ class Payload(Resource):
 	def get(self, payload) :
 		for file in files :
 			if payload == file["ticker"] :
-				return Path(file["fpath"]).read_bytes(), 200
+				return json.dumps(Path(file["fpath"]).read_text()), 200
 		return "File not found", 404
 	
 	def post(self) :
